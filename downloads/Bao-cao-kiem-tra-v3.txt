@@ -1,0 +1,12 @@
+BÁO CÁO KIỂM TRA — BẢN GỌN V3
+
+PDF đầu ra: 73 trang A4 dọc, giảm 31 trang so với bản v2 (104 trang).
+Đã bỏ chính xác nội dung trên trang 102, 103, 104 của v2: phần cuối thông tin xuất bản và hai trang trắng. Phần thông tin xuất bản đã nằm trên trang 101 của v2 vẫn được giữ.
+Tất cả 756 vùng nội dung còn lại của v2 được giữ; không thiếu hoặc lặp. Giữ đủ đáp án của 30 phần 第 và 10 bài 集中トレーニング, cùng toàn bộ 401 trích dẫn STT.
+Mỗi 第 bắt đầu trang mới. Thứ tự nội dung → đáp án → ngữ pháp liên quan được giữ. Các bài luyện tập nối tiếp trên trang còn đủ chỗ; tiêu đề đi cùng hướng dẫn và câu đầu.
+Thu gọn khoảng đệm crop và khoảng cách giữa các khối. Trích dẫn trình bày ba cột theo 問題; bài luyện tập dùng hai cột. Số trang nguồn chuyển xuống footer, tách khỏi số trang mới.
+Lề ngang 16 mm, lề dọc 15 mm. Kích thước chữ trong nội dung sách giữ nguyên so với v2, không kéo giãn crop. Trích dẫn giữ cỡ chữ 10 pt.
+Nội dung sách được copy/crop trực tiếp từ PDF nguồn; dữ liệu ảnh gốc được giữ. Không OCR, không gõ lại tiếng Nhật, không thay output bằng ảnh render.
+Đã mở lại PDF đã lưu và render cả 73 trang. Kiểm tra độ phủ không phát hiện nội dung bị cắt ngoài phần được yêu cầu bỏ; không có crop nguồn trùng, nội dung chồng lấn hoặc vượt vùng bố trí. Đã kiểm tra 401 trích dẫn với bảng ghép và STT trong N2 Sheet1/N1 NEW.
+Không có phần ghép đáp án chưa xác minh được. Các câu không có dẫn chiếu đủ rõ trong Excel tiếp tục được bỏ qua phần trích dẫn.
+PDF/Excel nguồn và bản v2 được giữ nguyên.
