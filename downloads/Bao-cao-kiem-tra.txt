@@ -1,0 +1,11 @@
+BÁO CÁO KIỂM TRA
+
+PDF đầu ra: 78 trang A4 dọc; lề 16 mm.
+Phạm vi: trang PDF 8–89. Không sử dụng trang 1–7.
+Đã đối chiếu 30 phần 第1回–第30回 với đáp án dựa trên tiêu đề và số trang tham chiếu ở trang PDF 81–88.
+Đã ghép đáp án của 10 bài 集中トレーニング sau từng bài tương ứng. Không lặp lại phần đáp án cuối sách.
+Giữ nội dung hướng dẫn trang PDF 78, thông tin xuất bản trang 79 và hai trang không có nội dung in 80, 89.
+Nội dung được copy từ PDF nguồn bằng các Form XObject có clipping, giữ dữ liệu ảnh scan gốc; không OCR, không gõ lại tiếng Nhật, không rasterize lại PDF đầu ra.
+Đã mở lại PDF và render từng trang để kiểm tra. Kiểm tra vùng nguồn không phát hiện thành phần nội dung bị bỏ sót; không có crop trùng hoặc chồng lấn trên canvas.
+Không có phần ghép đáp án chưa xác minh được.
+Chất lượng chữ và các vết scan vẫn theo bản nguồn. File nguồn được giữ nguyên.
