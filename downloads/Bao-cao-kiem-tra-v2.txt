@@ -1,0 +1,13 @@
+BÁO CÁO KIỂM TRA — BẢN CÓ TRÍCH DẪN EXCEL
+
+PDF đầu ra: 104 trang A4 dọc; lề 16 mm.
+Phạm vi nguồn: trang PDF 8–89; bỏ qua trang 1–7.
+Thứ tự: toàn bộ nội dung từng 第 → đáp án tương ứng → ngữ pháp liên quan, chia theo 問題 và số câu gốc. Mỗi 第 bắt đầu trang mới.
+Đã loại tiêu đề sách và banner 解答 ở đầu tập đáp án theo yêu cầu; giữ tiêu đề từng phần và toàn bộ đáp án. Không lặp lại đáp án ở cuối output.
+Đã đối chiếu đáp án của 30 phần 第1回–第30回 và 10 bài 集中トレーニング theo tiêu đề và số trang tham chiếu. Không có phần ghép đáp án chưa xác minh được.
+Trích dẫn lấy STT thực tế trong N2: Sheet1 và N1: NEW. Có trích dẫn cho 327/480 câu trong 30 phần và 74/100 câu trong các bài 集中トレーニング. Tổng cộng 401 câu.
+Chỉ ghi STT có mục tương ứng đủ rõ về cấu trúc và cách dùng; các câu còn lại không thêm dẫn chiếu. Danh sách vì vậy có thể có khoảng trống trong số câu. Không lấy STT từ các sheet N1 khác.
+Giữ hướng dẫn trang nguồn 78, thông tin xuất bản trang 79 và hai trang trắng nguồn 80, 89.
+Nội dung sách được crop/copy từ PDF nguồn, giữ dữ liệu ảnh scan gốc. Không gõ lại tiếng Nhật hoặc dùng OCR để thay thế nội dung. Chỉ các nhãn, số trang mới và trích dẫn STT là text mới.
+Đã mở lại PDF đã lưu và render từng trang để kiểm tra. Kiểm tra độ phủ nguồn không phát hiện nội dung bị bỏ sót ngoài banner được yêu cầu loại bỏ; không có crop trùng hoặc chồng lấn. Đã kiểm tra toàn bộ 401 trích dẫn trong PDF với bảng ghép và STT của hai file Excel.
+File PDF và Excel nguồn được giữ nguyên. Chất lượng chữ, màu và vết scan theo nguồn.
