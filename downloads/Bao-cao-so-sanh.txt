@@ -1,0 +1,33 @@
+BÁO CÁO SO SÁNH VÀ LOẠI CÂU TRÙNG
+
+TL1: Live-16.10-Kaori-ss-Luyện-đề-NP-N2-Bài-dấu-sao-ver1.pdf — 26 trang, 100 câu.
+TL2: [16_6] 100 CÂU BÀI SAO N2 NGƯỜI THI JLPT MẤT ĐIỂM NHIỀU NHẤT.pdf — 14 trang. Đếm thực tế có 95 câu: 19 kỳ thi x 5 câu, từ 2010.07 đến 2019.07. Các trang còn lại là bìa, đáp án và quảng bá.
+
+Có 85 cặp cùng đề gốc. Đã bỏ 69 bản trùng đầy đủ về câu bài tập, nội dung lựa chọn và vị trí dấu sao; giữ bản TL1 cho mỗi cặp. Khác font, xuống dòng, khoảng trắng, dấu câu trình bày hoặc cách ghi cùng từ như 私/わたし, 慌てて/あわてて không tạo câu mới.
+Giữ riêng 16 bản cùng đề gốc nhưng khác nội dung, số lựa chọn, vị trí chỗ trống/dấu sao hoặc nhãn người nói. Không tự chọn bản đúng hoặc sửa nội dung nguồn.
+Kết quả: 126 câu/bản câu hỏi trên 25 trang = 100 câu TL1 + 10 câu chỉ có trong TL2 + 16 bản khác nội dung của TL2.
+
+Nhãn Câu 1–126 là số mới. Số in trong crop vẫn giữ nguyên. TL2 được nhận diện bằng kỳ thi/số câu vì số 45–49 lặp qua nhiều kỳ. Bảng CSV ghi đủ 95 câu TL2, câu TL1 tương ứng, bản bị loại/được giữ, số câu mới và khác biệt.
+Giữ hướng dẫn học trong TL1 và toàn bộ bảng đáp án gốc TL2 một lần ở cuối PDF. Bìa/quảng bá TL2 và header/footer lặp không nằm trong bộ câu hỏi. Nhãn TL2 đi kèm các câu TL1 trùng đầy đủ để tra đáp án; không áp nhãn đáp án đó cho các bản khác dấu sao/chỗ trống.
+Nội dung lấy trực tiếp bằng crop/copy PDF, giữ text/font/vector/ảnh nguồn khi có. Nhận dạng chữ TL2 chỉ hỗ trợ so sánh và định vị; không dùng để gõ lại nội dung output. Hai file nguồn giữ nguyên.
+Đã mở PDF lưu lại và render cả 25 trang; kiểm tra 126 khối câu hỏi và tất cả 95 trạng thái TL2, không có khối trùng, chồng lấn hoặc vượt vùng bố trí. Đã kiểm tra các câu qua trang được ghép đủ phần câu và lựa chọn.
+
+CÁC BẢN GIỮ RIÊNG (SỐ CÂU TL1)
+19. Lựa chọn 4 của TL1 thêm 無理.
+20. Lựa chọn 4 của TL1 kết thúc ở 見; TL2 có 見ている.
+27. TL2 ghi số 2 cho cả lựa chọn 2 và 3; TL1 ghi 1–4.
+33. Dấu sao: TL1 vị trí 3; TL2 vị trí 2.
+45. Lựa chọn 1: TL1 今日; TL2 今.
+52. Dấu sao: TL1 vị trí 3; TL2 vị trí 2.
+54. Dấu sao: TL1 vị trí 3; TL2 vị trí 1.
+55. TL1 thiếu が trước あるんだね so với TL2.
+58. TL1 日本滞在中/ございました; TL2 日本に滞在中/ございます.
+59. TL1 ghi 風 thay cho 風邪; dấu sao TL1 vị trí 3, TL2 vị trí 4.
+62. Dấu sao: TL1 vị trí 3; TL2 vị trí 4.
+67. Vị trí chỗ trống và phần câu trước/sau chỗ trống khác nhau.
+71. Lựa chọn 4 của TL1 thiếu といった so với TL2.
+77. Dấu sao: TL1 vị trí 3; TL2 vị trí 1.
+94. TL1 ghi A/B; TL2 ghi ジョン/アリ cho người nói.
+96. TL1 có に trước 本に書いてあった; TL2 không có.
+
+Ghi chú về đáp án nguồn: dòng 2014.12, câu 47 trong TL2 ghi 21243 (5 chữ số). Giữ nguyên bảng nguồn, chưa xác minh đáp án này; không sửa hoặc đoán lại.
