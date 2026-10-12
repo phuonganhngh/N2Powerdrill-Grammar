@@ -1,0 +1,25 @@
+BÁO CÁO — ĐỀ, ĐÁP ÁN VÀ STT NGỮ PHÁP THEO TỪNG CÂU
+
+PDF: 31 trang A4 dọc, giữ đủ 126 câu/bản câu hỏi của bản đã loại trùng.
+Thứ tự mỗi khối: Câu n → crop đề gốc → đáp án vị trí dấu sao và thứ tự 4 lựa chọn → STT ngữ pháp liên quan khi tìm thấy mục phù hợp.
+Không lặp lại bảng đáp án chung ở cuối. Giữ hướng dẫn học ở trang đầu. Đã bỏ nhãn TL1/TL2 dài trong phần trình bày câu; nguồn được ghi trong bảng CSV riêng.
+Đề, lựa chọn, furigana, vị trí chỗ trống/dấu sao giữ nguyên qua crop/copy trực tiếp từ hai PDF nguồn. Không gõ lại tiếng Nhật trong nội dung PDF, không OCR để thay thế đề, không sửa câu hoặc lựa chọn nguồn.
+
+ĐÁP ÁN
+Có đáp án cho 121 câu. Thứ tự từ TL2 được đối chiếu với lựa chọn thực tế; số đáp án tại dấu sao tính theo vị trí dấu sao của chính bản đề đang giữ, không sao chép đáp án sao của bản đặt sao khác.
+15 câu không có đáp án trong TL2 (1–5, 21–25, 37–41) được tự giải theo 4 lựa chọn của đề; bảng CSV ghi rõ căn cứ.
+Hai dòng đáp án nguồn không khớp lựa chọn được giữ thông tin nguyên gốc và đối chiếu lại: Câu 47, nguồn 4321 → thứ tự tự giải 3421; Câu 49, nguồn 21243 (5 chữ số) → thứ tự tự giải 2143. Các ghi chú này cũng xuất hiện ngay dưới câu tương ứng.
+Câu 118: TL2 in số 2 cho cả lựa chọn thứ 2 và thứ 3. Đáp án được ghi theo vị trí của 4 lựa chọn, không sửa số in trong đề.
+Chưa xác minh đáp án cho câu 19, 20, 67, 71, 96; không ghép đáp án của bản đầy đủ khác vào các đề này:
+- Câu 19: lựa chọn 4 thêm chữ so với bản đối chiếu.
+- Câu 20: lựa chọn 4 thiếu phần cuối.
+- Câu 67: vị trí chỗ trống không khớp bản đối chiếu.
+- Câu 71: lựa chọn 4 thiếu phần cuối.
+- Câu 96: có chữ thừa sau chỗ trống.
+Các lỗi chữ/dấu câu khác trong đề vẫn giữ nguyên; ghi chú đối chiếu được lưu ở CSV, không tự sửa nguồn.
+
+TRÍCH DẪN
+67 câu có trích dẫn ngữ pháp phù hợp trong N2 Sheet1 và N1 NEW; dùng giá trị STT trong cột STT, không dùng số hàng Excel. Những câu không tìm được mục đủ phù hợp không thêm dòng trích dẫn. Không ghép các cấu trúc chỉ gần nghĩa nhưng khác cách dùng.
+
+KIỂM TRA
+Đã mở lại PDF đã lưu và render cả 31 trang. Kiểm tra đủ 126 câu, đúng thứ tự đề → đáp án → trích dẫn, mỗi khối câu nằm trọn một trang; các crop giữ nguyên so với bản trước. Không có khối chồng lấn hoặc vượt lề. Đã kiểm tra text của toàn bộ nhãn/đáp án/trích dẫn trong PDF lưu lại và toàn bộ STT với dữ liệu Excel. File nguồn và các bản PDF trước giữ nguyên.
