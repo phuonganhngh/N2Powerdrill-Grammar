@@ -1,0 +1,55 @@
+ĐỐI CHIẾU ĐỀ – ĐÁP ÁN – TRÍCH DẪN NGỮ PHÁP
+Ngày: 2026-10-21
+
+KẾT QUẢ
+N1: 520 câu, 81 trang A4; 328 câu có trích dẫn, tổng 453 tham chiếu STT.
+N2: 240 câu, 40 trang A4; 49 câu có trích dẫn, tổng 55 tham chiếu STT.
+Đã bỏ trạng thái chờ Excel trong PDF mới.
+STT lấy từ giá trị cột STT trong Excel, không phải số dòng của worksheet.
+- Grammar N2 - v2.xlsx: Sheet1.
+- Grammar N1.xlsx: NEW, đúng lựa chọn của người dùng.
+Hai sheet trong N2 có cùng STT và tên cấu trúc; sử dụng Sheet1 thống nhất.
+
+CÁCH TRÍCH DẪN
+Sau đề và đáp án, thêm: “Trích dẫn ngữ pháp liên quan: N2 STT ... / N1 STT ...”.
+Chỉ ghi cấp độ có tham chiếu được xác định. Nếu có ở cả hai Excel thì ghi cả hai.
+Đã xem cấu trúc, nghĩa và khi cần ví dụ của mục Excel để phân biệt các mẫu gần nhau.
+Không gán mục chỉ vì có một chuỗi chữ trùng hoặc chỉ gần nghĩa; cân nhắc ngữ cảnh sử dụng.
+Các biến thể trực tiếp như chia thể, chữ Hán/hiragana và dạng khẩu ngữ được đối chiếu theo cấu trúc.
+Ví dụ: “までもない” có ở N2 STT 122 và N1 NEW STT 83, nghĩa là “không cần phải”.
+Các mục trùng trong chính Excel vẫn giữ STT thực tế của Excel; không tự đánh lại STT.
+Những câu không xác định được một mục tương ứng đủ chắc không có dòng trích dẫn.
+Việc không có trích dẫn không phải là một kết luận độc lập rằng mọi cấu trúc phụ trong câu đều vắng mặt trong Excel.
+Bảng CSV đi kèm cho phép kiểm tra nguồn, đáp án và STT từng câu.
+
+SO SÁNH N1 VÀ THỨ TỰ
+So sánh ba tập đề N1 (320 + 100 + 100 câu): chưa phát hiện câu trùng đầy đủ.
+Giữ đủ 520 câu; không loại chỉ vì dùng chung mẫu ngữ pháp.
+Câu 1–320: tập 320 câu.
+Câu 321–420: tập 100 câu Phần 1, theo nhóm và số câu gốc.
+Câu 421–520: tập 100 câu Phần 2, theo nhóm và số câu gốc.
+Phân tích vùng câu hỏi để tìm ứng viên trùng, rồi đối chiếu các cặp gần nhất;
+kết quả không khẳng định tuyệt đối rằng mọi lỗi nhận dạng đều đã được loại trừ.
+N2 là một tài liệu riêng gồm đủ 240 câu theo thứ tự nguồn.
+
+ĐÁP ÁN NGUỒN CẦN KIỂM TRA
+Giữ nguyên các đáp án được cung cấp, không thay bằng đáp án tự giải.
+N2 câu 9: đề trang PDF 1, đáp án trang PDF 1.
+Nguồn ghi đáp án dấu sao 4, nhưng thứ tự 1 → 2 → 3 → 4 đặt số 3 vào ô sao thứ ba.
+N2 câu 36: đề trang PDF 4, đáp án trang PDF 1.
+Nguồn ghi đáp án dấu sao 3, nhưng thứ tự 4 → 3 → 1 → 2 đặt số 1 vào ô sao thứ ba.
+Hai câu đã ghi “Đáp án nguồn (cần kiểm tra)” trong PDF; chưa tự quyết định giá trị nào là lỗi.
+Những điểm bất thường vốn có trong câu tiếng Nhật được giữ nguyên, không tự sửa nội dung.
+
+KIỂM TRA BỐ CỤC
+A4 dọc, lề 16 mm, giữ tỷ lệ crop; mỗi câu, đáp án và trích dẫn nằm trọn cùng trang.
+Bổ sung tham chiếu làm tăng số trang so với bản chỉ có đề–đáp án.
+Đã sửa vùng crop cũ quá sát ở các nét chữ mảnh, dấu câu và cuối lựa chọn.
+Đề tiếng Nhật vẫn được copy trực tiếp từ PDF nguồn, giữ dữ liệu ảnh scan gốc;
+không dùng OCR thay cho nội dung PDF xuất, không rasterize lại toàn bộ PDF.
+Đã mở lại và render toàn bộ 40 + 81 trang của bản lưu; xem các trang render để kiểm tra bố cục.
+Kiểm tra tự động: đủ 240/520 đơn vị câu, không lặp nguồn câu, đáp án theo danh sách nguồn,
+không chồng lấn khối, không tràn vùng in, không tách một đơn vị câu sang hai trang xuất.
+Từng tham chiếu đã kiểm tra lại STT, sheet, số dòng và tên/nghĩa mục trong Excel gốc.
+Các file PDF và Excel nguồn giữ nguyên. Hash nguồn PDF đã đối chiếu không thay đổi.
+Kiểm tra này xác nhận việc bố trí và đối chiếu nguồn; không thay thế việc giải độc lập toàn bộ đề.
