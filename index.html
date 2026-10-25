@@ -16,10 +16,10 @@
 <div class="actions"><button id="allBtn" class="primary">Luyện toàn bộ</button><button id="wrongBtn">Ôn câu còn sai <span id="wrongCount">0</span></button><button id="shuffleBtn">⇄ Trộn thứ tự</button><button id="resultBtn">Xem kết quả</button></div>
 <div class="filters"><label>Bài / tập<select id="lessonFilter"><option value="">Tất cả bài</option></select></label><label>Dạng câu<select id="typeFilter"><option value="">Tất cả dạng</option><option value="m1">Điền ngữ pháp</option><option value="m2">Sắp xếp câu</option><option value="m3">Đọc đoạn văn</option><option value="ab">Chọn a / b</option></select></label></div>
 <div class="navigation"><div class="small muted">Chuyển nhanh trong lượt luyện</div><nav id="navgrid" class="navgrid" aria-label="Danh sách câu hỏi"></nav><div class="legend">Xanh: đúng · Đỏ: còn sai · Vàng: chưa chấm</div></div>
-<div class="tools"><button id="htmlBtn">↓ Tải HTML kèm tiến độ</button><button id="jsonBtn">Sao lưu tiến độ</button><button id="importBtn">Khôi phục tiến độ</button><button id="resetBtn" class="quiet">Xóa tiến độ</button><input type="file" accept="application/json,.json" id="importFile" hidden></div>
+<div class="tools"><button id="htmlBtn">Download tiến bộ</button><button id="importBtn">Upload tiến độ</button><input type="file" accept="text/html,.html,.htm" id="importFile" hidden></div>
 </aside>
 <main>
-<div class="topline"><div><span class="pill">HỌC TỪ LỖI SAI</span><div id="sessionlabel" class="sessionlabel"></div></div><span id="storageStatus" class="small muted">Tự động lưu tiến độ</span></div>
+<div class="topline"><div><span class="pill">HỌC TỪ LỖI SAI</span><div id="sessionlabel" class="sessionlabel"></div></div></div>
 <div class="stats" aria-label="Thống kê toàn bộ"><div class="stat"><strong id="statDone">0</strong><span>Đã chấm / 145</span></div><div class="stat"><strong id="statRight">0</strong><span>Đúng gần nhất</span></div><div class="stat"><strong id="statWrong">0</strong><span>Cần ôn lại</span></div><div class="stat"><strong id="statRate">—</strong><span>Tỷ lệ đúng gần nhất</span></div></div>
 <div class="progress" role="progressbar" aria-label="Tiến độ chấm bài" aria-valuemin="0" aria-valuemax="145" aria-valuenow="0"><div id="progressfill" style="width:0%"></div></div>
 <label class="questionpicker">Chọn câu<select id="questionSelect"></select></label>
@@ -37,10 +37,10 @@ const KEY='power-drill-n2-wrong-v1',VERSION=1,SECTIONS={m1:'問題1 · Điền n
 const $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let state={version:VERSION,updated:0,records:{}},queue=Q.map(q=>q.id),position=0,mode='all',storageOK=true;
 const byId=Object.fromEntries(Q.map(q=>[q.id,q]));
-function valid(s){if(!s||s.version!==VERSION||!s.records||typeof s.records!=='object')return false;for(const [id,r] of Object.entries(s.records)){if(!byId[id]||!r||typeof r!=='object')return false;const q=byId[id],allowed=q.section==='ab'?['a','b']:['1','2','3','4'];if(typeof r.input!=='string'||r.input.length>(q.section==='m2'?4:1)||[...r.input].some(x=>!allowed.includes(x))||new Set(r.input).size!==r.input.length)return false;if(r.checked!==undefined&&typeof r.checked!=='boolean')return false;for(const k of ['attempts','mistakes'])if(r[k]!==undefined&&(!Number.isInteger(r[k])||r[k]<0))return false;if(r.last!==undefined&&r.last!==null&&typeof r.last!=='boolean')return false;if(r.checked&&r.input.length!==(q.section==='m2'?4:1))return false;if(r.checked&&r.last!==(r.input===q.answer))return false;}return true;}
+function valid(s){if(!s||s.version!==VERSION||!s.records||typeof s.records!=='object')return false;for(const [id,r] of Object.entries(s.records)){if(!Object.hasOwn(byId,id)||!r||typeof r!=='object')return false;const q=byId[id],allowed=q.section==='ab'?['a','b']:['1','2','3','4'];if(typeof r.input!=='string'||r.input.length>(q.section==='m2'?4:1)||[...r.input].some(x=>!allowed.includes(x))||new Set(r.input).size!==r.input.length)return false;if(r.checked!==undefined&&typeof r.checked!=='boolean')return false;for(const k of ['attempts','mistakes'])if(r[k]!==undefined&&(!Number.isInteger(r[k])||r[k]<0))return false;if(r.last!==undefined&&r.last!==null&&typeof r.last!=='boolean')return false;if(r.checked&&r.input.length!==(q.section==='m2'?4:1))return false;if(r.checked&&r.last!==(r.input===q.answer))return false;}return true;}
 try{const embedded=JSON.parse($('saved-progress').textContent);if(valid(embedded))state=embedded;const raw=localStorage.getItem(KEY);if(raw){const local=JSON.parse(raw);if(valid(local)&&(local.updated||0)>=(state.updated||0))state=local;}}catch(e){storageOK=false;}
 function record(q){return state.records[q.id]||{input:'',checked:false,last:null,attempts:0,mistakes:0};}
-function store(){state.updated=Date.now();try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){storageOK=false;}$('storageStatus').textContent=storageOK?'Tiến độ đã lưu trên trình duyệt':'Không lưu được trên trình duyệt · hãy tải bản sao';}
+function store(){state.updated=Date.now();try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){storageOK=false;}}
 function toast(t){$('toast').textContent=t;$('toast').hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('toast').hidden=true,3500);}
 function current(){return byId[queue[position]];}
 function stats(){const rr=Object.values(state.records),done=rr.filter(r=>r.last!==null&&r.last!==undefined).length,right=rr.filter(r=>r.last===true).length,wrong=rr.filter(r=>r.last===false).length;$('statDone').textContent=done;$('statRight').textContent=right;$('statWrong').textContent=wrong;$('statRate').textContent=done?Math.round(right/done*100)+'%':'—';$('wrongCount').textContent=wrong;$('progressfill').style.width=(done/Q.length*100)+'%';document.querySelector('[role="progressbar"]').setAttribute('aria-valuenow',done);}
@@ -50,7 +50,7 @@ const r=record(q),order=q.section==='m2',options=q.section==='ab'?['a','b']:['1'
 box.innerHTML=`<div class="cardheader"><div><div class="eyebrow">${esc(q.lesson)} / ${esc(q.id)}</div><h2>${esc(SECTIONS[q.section])}</h2><div class="meta">Câu gốc ${q.number} · Trang PDF ${q.page} · Câu ${position+1}/${queue.length}</div></div></div>
 ${q.context?`<details open><summary>Đoạn văn chung — đọc trước khi chọn</summary><div class="figure"><img class="contextimg" src="${A[q.context]}" alt="Đoạn văn gốc cho ${esc(q.lesson)} 問題3"></div></details>`:''}
 <div class="figure"><img class="qimage" src="${A[q.image]}" alt="Đề và lựa chọn ${esc(q.id)}, trích trang ${q.page} của PDF"></div>
-<div class="instruction">${order?'Bấm các số theo thứ tự từ trái sang phải. Kết quả hiện ngay khi chọn đủ 4 số.':q.section==='ab'?'Chọn a hoặc b để hoàn thành câu trong ảnh.':'Chọn số ứng với đáp án đúng trong ảnh.'}</div>
+${order?'<div class="instruction">Bấm các số theo thứ tự từ trái sang phải. Kết quả hiện ngay khi chọn đủ 4 số.</div>':''}
 ${order?`<div class="sequence" aria-label="Thứ tự đã chọn">${[0,1,2,3].map(i=>`<div class="slot ${r.input[i]?'filled':''}"><small>VỊ TRÍ ${i+1}</small>${r.input[i]||'·'}</div>`).join('')}</div>`:''}
 <div class="choices" role="group" aria-label="Lựa chọn đáp án">${options.map(v=>{let cls='choice';if(!order&&r.input===v)cls+=' selected';if(r.checked&&!order){if(v===q.answer)cls+=' key';else if(v===r.input)cls+=' miss';}return `<button class="${cls}" data-choice="${v}" aria-label="Chọn ${v}" aria-pressed="${!order&&r.input===v}" ${r.checked||(order&&r.input.includes(v))?'disabled':''}>${v}</button>`;}).join('')}</div>
 ${r.checked?`<div class="feedback ${r.last?'':'bad'}" role="status"><strong lang="ja">${r.last?'正解':'不正解'}</strong></div><div class="figure"><img class="sourceimg" src="${A[q.evidence]}" alt="${esc(q.id)} — ghi chú và nét sửa" loading="eager"></div><div class="controls"><button id="retryBtn">Làm lại câu này</button></div>`:order&&r.input?'<div class="controls"><button id="undoBtn">↶ Xóa số cuối</button></div>':''}`;
@@ -67,12 +67,21 @@ function download(content,type,name){const u=URL.createObjectURL(new Blob([conte
 $('allBtn').onclick=()=>start('all',true);$('wrongBtn').onclick=()=>start('wrong',true);$('resultBtn').onclick=showResults;$('questionSelect').onchange=e=>{position=Number(e.target.value);render();};$('navgrid').onclick=e=>{const b=e.target.closest('[data-index]');if(b){position=Number(b.dataset.index);render();}};
 $('shuffleBtn').onclick=()=>{for(let i=queue.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[queue[i],queue[j]]=[queue[j],queue[i]];}position=0;render();toast('Đã trộn thứ tự trong lượt luyện hiện tại.');};
 $('lessonFilter').onchange=$('typeFilter').onchange=()=>start(mode);$('closeResults').onclick=()=>$('resultsDialog').close();$('reviewResults').onclick=()=>{$('resultsDialog').close();start('wrong',true);};
-$('jsonBtn').onclick=()=>download(JSON.stringify(state,null,2),'application/json','N2-tien-do.json');
 $('htmlBtn').onclick=()=>{const clone=document.documentElement.cloneNode(true);clone.querySelector('#saved-progress').textContent=JSON.stringify(state).replace(/</g,'\\u003c');clone.querySelector('#question').innerHTML='';clone.querySelector('#navgrid').innerHTML='';clone.querySelector('#questionSelect').innerHTML='';clone.querySelector('#resultsBody').innerHTML='';clone.querySelector('#resultsDialog').removeAttribute('open');clone.querySelector('#toast').hidden=true;download('<!doctype html>\n'+clone.outerHTML,'text/html;charset=utf-8','Power-Drill-N2-Luyen-cau-sai.html');toast('Đã xuất HTML độc lập kèm tiến độ hiện tại.');};
-$('importBtn').onclick=()=>$('importFile').click();$('importFile').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;const incoming=JSON.parse(await f.text());if(!valid(incoming))throw Error();state=incoming;Q.forEach(q=>gradeOne(q));store();start('all',true);toast('Đã khôi phục tiến độ.');}catch(err){toast('File tiến độ không hợp lệ hoặc không thuộc bộ câu hỏi này.');}e.target.value='';};
-$('resetBtn').onclick=()=>{if(confirm('Xóa toàn bộ tiến độ đã lưu trên trình duyệt này?')){state={version:VERSION,updated:Date.now(),records:{}};store();start('all',true);toast('Đã xóa tiến độ.');}};
+$('importBtn').onclick=()=>$('importFile').click();
+$('importFile').onchange=async e=>{try{
+ const f=e.target.files[0];if(!f)return;
+ if(f.size>32*1024*1024)throw Error();
+ const doc=new DOMParser().parseFromString(await f.text(),'text/html');
+ const saved=doc.querySelector('script#saved-progress[type="application/json"]');
+ const bank=doc.querySelector('script#bank[type="application/json"]');
+ if(!saved||!bank)throw Error();
+ const incoming=JSON.parse(saved.textContent),uploadedBank=JSON.parse(bank.textContent);
+ if(!valid(incoming)||!Array.isArray(uploadedBank.questions)||uploadedBank.questions.length!==Q.length||new Set(uploadedBank.questions.map(q=>q.id)).size!==Q.length||!uploadedBank.questions.every(q=>Object.hasOwn(byId,q.id)&&q.answer===byId[q.id].answer&&q.section===byId[q.id].section))throw Error();
+ state=incoming;Q.forEach(q=>gradeOne(q));store();start('all',true);toast('Đã khôi phục tiến độ từ file HTML.');
+ }catch(err){toast('Hãy chọn file HTML tiến độ đã download từ bài luyện này.');}e.target.value='';};
 document.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey||$('resultsDialog').open||['SELECT','INPUT','BUTTON','TEXTAREA','SUMMARY'].includes(e.target.tagName))return;const q=current();if(!q)return;if(['1','2','3','4'].includes(e.key)){e.preventDefault();choose(q.section==='ab'?({'1':'a','2':'b'}[e.key]||''):e.key);}});
 [...new Set(Q.map(q=>q.lesson))].forEach(name=>{const o=document.createElement('option');o.value=name;o.textContent=name;$('lessonFilter').appendChild(o);});
-Q.forEach(q=>gradeOne(q));store();render();if(!storageOK)$('storageStatus').textContent='Hãy tải bản sao để giữ tiến độ trên thiết bị khác.';
+Q.forEach(q=>gradeOne(q));store();render();
 </script>
 </body></html>
